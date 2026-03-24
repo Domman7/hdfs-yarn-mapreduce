@@ -1,0 +1,47 @@
+services:
+  namenode:
+    build: .
+    container_name: namenode
+    hostname: namenode
+    command: bash -c "hdfs namenode -format -force && hdfs namenode"
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+    volumes:
+      - ./config:/opt/hadoop/etc/hadoop
+      - ./scripts:/scripts
+      - ./input:/input
+      - ./output:/output
+
+  datanode:
+    build: .
+    container_name: datanode
+    hostname: datanode
+    command: hdfs datanode
+    volumes:
+      - ./config:/opt/hadoop/etc/hadoop
+    depends_on:
+      - namenode
+
+  resourcemanager:
+    build: .
+    container_name: resourcemanager
+    hostname: resourcemanager
+    command: yarn resourcemanager
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./config:/opt/hadoop/etc/hadoop
+    depends_on:
+      - namenode
+
+  nodemanager:
+    build: .
+    container_name: nodemanager
+    hostname: nodemanager
+    command: yarn nodemanager
+    volumes:
+      - ./config:/opt/hadoop/etc/hadoop
+      - ./scripts:/scripts
+    depends_on:
+      - resourcemanager
