@@ -4,12 +4,12 @@
 
 ## Запуск
 
-make up      - запустить кластер
-make run     - выполнить задачу
-make down    - остановить кластер
-make logs    - показать логи
-make shell	 - войти в контейнер NameNode
-make clean	 - остановить кластер и удалить контейнеры
+`make up`      - запустить кластер  
+`make run`     - выполнить задачу  
+`make down`    - остановить кластер  
+`make logs`    - показать логи  
+`make shell`	 - войти в контейнер NameNode  
+`make clean`	 - остановить кластер и удалить контейнеры
 
 ## Использование
 
@@ -21,7 +21,7 @@ make clean	 - остановить кластер и удалить контей
 
 ## UI
 
-NameNode: http://localhost:9870
+NameNode: http://localhost:9870  
 ResourceManager: http://localhost:8088
 
 ## Пример использования
