@@ -28,20 +28,20 @@ ResourceManager: http://localhost:8088
 
 ### Запуск кластера
 
-![make up](make_up.png)
+![make up](images/make_up.png)
 
 ### Запуск задачи MapReduce
 
-![make run](make_run1.png)
+![make run](images/make_run1.png)
 
 ### Файловая система HDFS
 
-![hdfs](hdfs.png)
+![hdfs](images/hdfs.png)
 
 ### Задача в YARN
 
-![YARN](YARN.png)
+![YARN](images/YARN.png)
 
 ### Результат выполнения
 
-![result](make_run2.png)
+![result](images/make_run2.png)
